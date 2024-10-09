@@ -30,7 +30,7 @@ class CountryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Center(child: Text('Country Info'))),
+      appBar: AppBar(title: const Center(child: Text('Country Information'))),
       body: FutureBuilder<Country>(
         future: _fetchCountry(),
         builder: (context, snapshot) {
