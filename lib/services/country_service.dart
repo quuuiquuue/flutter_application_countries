@@ -6,7 +6,8 @@ class CountryService {
 
   Future<Country> fetchCountry(String countryName) async {
     try {
-      final response = await _dio.get('https://restcountries.com/v3.1/name/$countryName');
+      final response =
+          await _dio.get('https://restcountries.com/v3.1/name/$countryName');
       if (response.statusCode == 200) {
         List data = response.data;
         return Country.fromJson(data[0]);
