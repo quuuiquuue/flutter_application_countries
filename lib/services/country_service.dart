@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import '../models/country.dart';
+import '../infrastructure/models/country.dart';
 
 class CountryService {
   final Dio _dio = Dio();

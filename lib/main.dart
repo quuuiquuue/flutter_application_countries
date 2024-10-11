@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'services/country_service.dart';
-import 'models/country.dart';
+import 'infrastructure/models/country.dart';
 
 void main() => runApp(CountriesApp());
 
