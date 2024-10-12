@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_countries/config/theme/app_theme.dart';
 import 'package:flutter_application_countries/presentation/screens/country_screen.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'presentation/services/country_service.dart';
-import 'infrastructure/models/country.dart';
+
 
 void main() => runApp(const CountriesApp());
 
@@ -12,9 +11,9 @@ class CountriesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Country Search App',
+      title: 'Buscador de paises',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: AppTheme(selectedColor: 1).theme(),
       home: const CountryScreen(
           countryName:
               'spain'), // Puedes cambiar 'spain' por cualquier otro país
