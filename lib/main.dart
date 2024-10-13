@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_countries/config/theme/app_theme.dart';
+import 'package:flutter_application_countries/presentation/providers/country_provider.dart';
 import 'package:flutter_application_countries/presentation/screens/country_screen.dart';
+import 'package:provider/provider.dart';
 
+void main() {
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => CountryProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
+}
 
-void main() => runApp(const CountriesApp());
-
-class CountriesApp extends StatelessWidget {
-  const CountriesApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +24,7 @@ class CountriesApp extends StatelessWidget {
       title: 'Buscador de paises',
       debugShowCheckedModeBanner: false,
       theme: AppTheme(selectedColor: 1).theme(),
-      home: const CountryScreen(
-          countryName:
-              'spain'), // Puedes cambiar 'spain' por cualquier otro país
+      home: const CountryScreen(),
     );
   }
 }

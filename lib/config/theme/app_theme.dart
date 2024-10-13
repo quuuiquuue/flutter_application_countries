@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//Paleta de colores de nuestra aplicacion
 const List<Color> colorThemes = [
   Colors.blue,
   Colors.teal,
@@ -7,7 +8,6 @@ const List<Color> colorThemes = [
   Colors.yellow,
   Colors.orange,
   Colors.pink,
-
 ];
 
 class AppTheme {
