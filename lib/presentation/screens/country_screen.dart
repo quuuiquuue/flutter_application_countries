@@ -32,12 +32,12 @@ class _CountrySearchField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController _searchController = TextEditingController();
+    final TextEditingController searchController = TextEditingController();
 
     return Column(
       children: [
         TextField(
-          controller: _searchController,
+          controller: searchController,
           decoration: const InputDecoration(
             labelText: 'Introduce un país',
             border: OutlineInputBorder(),
@@ -46,10 +46,10 @@ class _CountrySearchField extends StatelessWidget {
         const SizedBox(height: 10),
         ElevatedButton(
           onPressed: () {
-            if (_searchController.text.isNotEmpty) {
+            if (searchController.text.isNotEmpty) {
               context
                   .read<CountryProvider>()
-                  .fetchCountry(_searchController.text.trim());
+                  .fetchCountry(searchController.text.trim());
             }
           },
           child: const Text('Buscar'),
