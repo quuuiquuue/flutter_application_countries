@@ -1,16 +1,21 @@
-# flutter_application_countries
+# Flutter Application Countries
 
-A new Flutter project.
+Este proyecto es una aplicación Flutter que permite a los usuarios buscar información detallada sobre países en todo el mundo. Utiliza la API pública de [REST Countries](https://restcountries.com/) para obtener datos como la bandera, el nombre oficial y común del país, su capital, entre otros detalles.
 
-## Getting Started
+## Características
 
-This project is a starting point for a Flutter application.
+- **Búsqueda de países:** Los usuarios pueden introducir el nombre de un país y obtener información en tiempo real sobre ese país.
+- **Datos de los países:** Para cada país, se muestra:
+  - Bandera (en formato SVG)
+  - Nombre común y oficial
+  - Capital del país
+- **Interfaz intuitiva:** Se proporciona un campo de búsqueda para introducir el nombre del país deseado.
+- **Consumo de API REST:** Utiliza [REST Countries API](https://restcountries.com/) para obtener la información.
 
-A few resources to get you started if this is your first Flutter project:
+## Tecnologías Utilizadas
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Flutter:** Un SDK de UI open-source para crear aplicaciones multiplataforma.
+- **Provider:** Una solución de gestión de estado ampliamente utilizada en Flutter.
+- **Dio:** Una biblioteca para realizar solicitudes HTTP.
+- **REST Countries API:** Una API pública para obtener datos de países.
+- **Flutter SVG:** Para mostrar las banderas de los países en formato SVG.
