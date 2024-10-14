@@ -30,7 +30,7 @@ class CountryProvider extends ChangeNotifier {
         errorMessage = 'Error al cargar los datos del país';
       }
     } catch (error) {
-      errorMessage = 'Error: $error';
+      errorMessage = 'Error: Bad Request 404';
     }
 
     isLoading = false;
