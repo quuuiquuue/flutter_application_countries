@@ -6,13 +6,9 @@ import 'package:provider/provider.dart';
 
 void main() {
   runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => CountryProvider()),
-      ],
-      child: const MyApp(),
-    ),
-  );
+ const MyApp(),
+    )
+  ;
 }
 
 class MyApp extends StatelessWidget {
@@ -20,11 +16,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Buscador de paises',
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme(selectedColor: 1).theme(),
-      home: const CountryScreen(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => CountryProvider()),
+      ],
+      child: MaterialApp(
+        title: 'Buscador de paises',
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme(selectedColor: 1).theme(),
+        home: const CountryScreen(),
+      ),
     );
   }
 }
