@@ -27,6 +27,9 @@ class CountryScreen extends StatelessWidget {
   }
 }
 
+/// Clase CountrySearchField que almacena la instacia de la clase TextEditingController
+/// el cual nos va a proporcionar la forma de controlar lo que introducimos en el TextField
+/// y lo enviara al CountryProvider para su lectura en la API Countries.
 class _CountrySearchField extends StatelessWidget {
   const _CountrySearchField();
 
@@ -59,13 +62,16 @@ class _CountrySearchField extends StatelessWidget {
   }
 }
 
+/// Clase CountryView en la cual hacemos una instancia del Provider,
+/// para poder traer la informacion del pais y mostrarla posteriormente 
+/// en la clase CountryDetails con toda la informacion requerida.
 class _CountryView extends StatelessWidget {
   const _CountryView();
 
   @override
   Widget build(BuildContext context) {
     final countryProvider = context.watch<CountryProvider>();
-
+    
     if (countryProvider.isLoading) {
       return const Center(child: CircularProgressIndicator());
     }
@@ -74,15 +80,22 @@ class _CountryView extends StatelessWidget {
       return Center(child: Text(countryProvider.errorMessage!));
     }
 
+    //Nos aseguramos que el contenido del pais no viene a nulo
     if (countryProvider.country == null) {
       return const Center(child: Text('Por favor, introduce un país'));
     }
 
-    final country = countryProvider.country!;
+  /**
+   * Una vez que analizamos que no viene a nulo, aseguramos al compilador con el caracter '!'
+   * que recibimos informacion del Provider.
+   */
+    final country = countryProvider.country!;  
     return _CountryDetails(country: country);
   }
 }
 
+/// Clase CountryDetails la cual muestra la informacion de cada pais,
+/// en una distribucion en columna lo que la hace mas legible
 class _CountryDetails extends StatelessWidget {
   final Country country;
 

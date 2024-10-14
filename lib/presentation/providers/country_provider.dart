@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_countries/infrastructure/models/country.dart';
 import 'package:dio/dio.dart';
 
+
+/// Clase CountryProvider, su funcionalidad es crear una solicitud HTTP en base a la libreria Dio,
+/// en la cual alojaremos en un response la informacion del pais para posteriormente guaradalo en un List  
+/// para su procesamiento de extraccion de datos
 class CountryProvider extends ChangeNotifier {
   Country? country;
   bool isLoading = false;
@@ -12,7 +16,7 @@ class CountryProvider extends ChangeNotifier {
   Future<void> fetchCountry(String countryName) async {
     isLoading = true;
     errorMessage = null;
-    notifyListeners();  // Notifica a los widgets que se ha iniciado una carga.
+    notifyListeners();  
 
     final url = 'https://restcountries.com/v3.1/name/$countryName';
 
@@ -22,7 +26,7 @@ class CountryProvider extends ChangeNotifier {
         final List<dynamic> data = response.data;
 
         if (data.isNotEmpty) {
-          country = Country.fromJson(data[0]);  // Asigna el primer país encontrado.
+          country = Country.fromJson(data[0]);  // Asignamos el primer país encontrado.
         } else {
           errorMessage = 'País no encontrado';
         }
@@ -34,6 +38,6 @@ class CountryProvider extends ChangeNotifier {
     }
 
     isLoading = false;
-    notifyListeners();  // Notifica que la carga ha terminado.
+    notifyListeners();  // Notificamos que la carga ha terminado.
   }
 }
